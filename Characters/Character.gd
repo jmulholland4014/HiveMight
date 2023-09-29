@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Character
+class_name HiveMightCharacter
 var health = 100
 var dmg = 20
 
