@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgv8q0bkk07cn"]
-
-[ext_resource type="PackedScene" uid="uid://dtmv7okg667qj" path="res://character.tscn" id="1_7face"]
-[ext_resource type="Script" path="res://ally.gd" id="2_142hd"]
-
-[node name="Ally" instance=ExtResource("1_7face")]
-script = ExtResource("2_142hd")
