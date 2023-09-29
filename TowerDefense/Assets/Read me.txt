@@ -1,6 +1,0 @@
-File : Plain.zip
-Author : MikAnimus
-Version :
-		1.0		03/04/22		Creation
-		1.1		04/09/22		Colors improved
-	
