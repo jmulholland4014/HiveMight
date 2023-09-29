@@ -42,11 +42,11 @@ _data = {
 }
 
 [node name="WorkerBee" instance=ExtResource("1_uvjm7")]
-position = Vector2(8, 25)
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" parent="." index="0"]
 texture_filter = 1
+position = Vector2(0, 5.5)
 texture = ExtResource("2_2v4vi")
 hframes = 4
 vframes = 4

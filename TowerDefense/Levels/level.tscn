@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://7bkpr63p1vuy"]
+[gd_scene load_steps=10 format=3 uid="uid://7bkpr63p1vuy"]
 
 [ext_resource type="Texture2D" uid="uid://bqwjemu4ds0p4" path="res://TowerDefense/Assets/Plaine2.png" id="1_cj61g"]
 [ext_resource type="Script" path="res://TowerDefense/Levels/level.gd" id="1_tpx31"]
 [ext_resource type="Texture2D" uid="uid://cbw7pf6bihg16" path="res://TowerDefense/Assets/UIElements/yellow-square-button-md.png" id="2_0hc1n"]
+[ext_resource type="Script" path="res://TowerDefense/Levels/EnemySpawner.gd" id="3_flbed"]
 [ext_resource type="Script" path="res://TowerDefense/Levels/UI.gd" id="3_rcani"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_30scr"]
@@ -17094,6 +17095,17 @@ layer_1/tile_data = PackedInt32Array()
 [node name="TowerExclusion" type="TileMap" parent="CanvasLayer"]
 tile_set = SubResource("TileSet_y0lx4")
 format = 2
+
+[node name="Enemies" type="Node2D" parent="CanvasLayer"]
+
+[node name="SpawnTimer" type="Timer" parent="CanvasLayer"]
+autostart = true
+
+[node name="Hive" type="Marker2D" parent="CanvasLayer"]
+position = Vector2(576, 160)
+
+[node name="SpawnPoints" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("3_flbed")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_rcani")

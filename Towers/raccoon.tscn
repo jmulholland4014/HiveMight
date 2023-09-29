@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfy1p754gabbt"]
+
+[ext_resource type="PackedScene" uid="uid://8bir3ooh4xyf" path="res://Towers/tower.tscn" id="1_vnguv"]
+[ext_resource type="Script" path="res://Enemy.gd" id="2_li2go"]
+[ext_resource type="Texture2D" uid="uid://c6th6ysbiuowx" path="res://Towers/Assets/Spritesheets/raccoon-running-right.png" id="3_bwaub"]
+
+[sub_resource type="Animation" id="Animation_bgw00"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_brynp"]
+resource_name = "Walking"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vaymk"]
+_data = {
+"RESET": SubResource("Animation_bgw00"),
+"Walking": SubResource("Animation_brynp")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ghgur"]
+radius = 118.004
+
+[node name="Raccoon" instance=ExtResource("1_vnguv")]
+script = ExtResource("2_li2go")
+
+[node name="Sprite2D" parent="." index="0"]
+texture_filter = 1
+position = Vector2(1, -5)
+texture = ExtResource("3_bwaub")
+vframes = 3
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_vaymk")
+}
+
+[node name="CollisionShape2D" parent="Detection Radius" index="0"]
+shape = SubResource("CircleShape2D_ghgur")
