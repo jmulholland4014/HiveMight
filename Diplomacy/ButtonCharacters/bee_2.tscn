@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqj6oqcsquaf"]
+
+[ext_resource type="PackedScene" uid="uid://6m3g87kpnh1b" path="res://Diplomacy/Assets/diplomacy_character.tscn" id="1_j4kt4"]
+[ext_resource type="Texture2D" uid="uid://dqcq5fyqamnip" path="res://Diplomacy/Assets/Screenshot 2023-10-04 133927.png" id="2_cv264"]
+
+[node name="Bee_2" instance=ExtResource("1_j4kt4")]
+modulate = Color(0.639216, 0, 0.286275, 1)
+texture_normal = ExtResource("2_cv264")

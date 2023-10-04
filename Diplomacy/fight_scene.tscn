@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4rycfr1x3rhp"]
+
+[ext_resource type="Texture2D" uid="uid://c0xyr5x76timj" path="res://Diplomacy/Assets/trv9_44up_210408.jpg" id="1_h2egm"]
+
+[node name="FightScene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(577, 321)
+scale = Vector2(0.182134, 0.183836)
+texture = ExtResource("1_h2egm")
