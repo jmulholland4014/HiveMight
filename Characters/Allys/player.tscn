@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1prr7ou4xtkj"]
+
+[ext_resource type="PackedScene" uid="uid://dtmv7okg667qj" path="res://Characters/character.tscn" id="1_bm4se"]
+[ext_resource type="Script" path="res://Characters/Allys/player.gd" id="2_3pedj"]
+[ext_resource type="Texture2D" uid="uid://bi88nb2qn4br6" path="res://icon.svg" id="3_r2qpp"]
+[ext_resource type="Texture2D" uid="uid://cdeypafvabrbf" path="res://Diplomacy/Assets/weapon_sword_1.png" id="4_ykng3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efo44"]
+size = Vector2(129, 129)
+
+[node name="Player" instance=ExtResource("1_bm4se")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_3pedj")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_efo44")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_r2qpp")
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+[node name="Sword" type="Node2D" parent="." index="4"]
+
+[node name="Node2D" type="Node2D" parent="Sword" index="0"]
+position = Vector2(-78, -88)
+rotation = -1.5708
+
+[node name="Sprite2D" type="Sprite2D" parent="Sword/Node2D" index="0"]
+texture_filter = 1
+position = Vector2(-38, 36)
+scale = Vector2(10, 10)
+texture = ExtResource("4_ykng3")

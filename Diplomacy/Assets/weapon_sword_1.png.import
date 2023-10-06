@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvecmk4j26wxj"
-path="res://.godot/imported/EasyMenusLogo.png-c5232eb7ba7faa781a27e8832758e645.ctex"
+uid="uid://cdeypafvabrbf"
+path="res://.godot/imported/weapon_sword_1.png-7ffbfa1ca48bf8e023166fc2d415faf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EasyMenusLogo.png"
-dest_files=["res://.godot/imported/EasyMenusLogo.png-c5232eb7ba7faa781a27e8832758e645.ctex"]
+source_file="res://Diplomacy/Assets/weapon_sword_1.png"
+dest_files=["res://.godot/imported/weapon_sword_1.png-7ffbfa1ca48bf8e023166fc2d415faf8.ctex"]
 
 [params]
 

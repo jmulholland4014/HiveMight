@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvecmk4j26wxj"
-path="res://.godot/imported/EasyMenusLogo.png-c5232eb7ba7faa781a27e8832758e645.ctex"
+uid="uid://nimcst8n6r2m"
+path="res://.godot/imported/TX Tileset Grass.png-515fce9b17b4db9abf5309a71e719028.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EasyMenusLogo.png"
-dest_files=["res://.godot/imported/EasyMenusLogo.png-c5232eb7ba7faa781a27e8832758e645.ctex"]
+source_file="res://Diplomacy/Assets/TX Tileset Grass.png"
+dest_files=["res://.godot/imported/TX Tileset Grass.png-515fce9b17b4db9abf5309a71e719028.ctex"]
 
 [params]
 
