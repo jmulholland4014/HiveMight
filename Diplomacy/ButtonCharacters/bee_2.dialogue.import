@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_10"
+type="Resource"
+uid="uid://pft328mu3das"
+path="res://.godot/imported/bee_2.dialogue-ed86d81ed20afb3372945369828e2045.tres"
+
+[deps]
+
+source_file="res://Diplomacy/ButtonCharacters/bee_2.dialogue"
+dest_files=["res://.godot/imported/bee_2.dialogue-ed86d81ed20afb3372945369828e2045.tres"]
+
+[params]
+
+defaults=true

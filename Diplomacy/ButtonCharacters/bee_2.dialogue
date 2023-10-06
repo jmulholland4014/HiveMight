@@ -1,0 +1,10 @@
+~ start
+Bee 2: I am Bee 2, Ready to make your last mistake?
+- You're On.
+	Bee 2: Let make this mistake one to remember.
+	if DiplomacyGlobal.start_fight("bee_2"):
+		=> END
+- Nope.
+	Bee 2: Saw that one coming.
+	=> END
+=> END

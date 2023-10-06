@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://lbfv7c7lgklp"]
+
+[ext_resource type="Script" path="res://Diplomacy/Diplomacy.gd" id="1_xch48"]
+[ext_resource type="Texture2D" uid="uid://c6uf33yftgfl5" path="res://Diplomacy/Assets/result.png" id="2_3504e"]
+[ext_resource type="Script" path="res://Diplomacy/BeeHolder.gd" id="3_nsf5q"]
+
+[node name="Diplomacy" type="Node2D"]
+script = ExtResource("1_xch48")
+
+[node name="Result" type="Sprite2D" parent="."]
+position = Vector2(575.5, 322.75)
+scale = Vector2(1.60139, 1.5963)
+texture = ExtResource("2_3504e")
+
+[node name="BeeHolder" type="Node2D" parent="."]
+script = ExtResource("3_nsf5q")
+
+[node name="Button_Spawns" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Button_Spawns"]
+position = Vector2(6, 137)
+
+[node name="Marker2D2" type="Marker2D" parent="Button_Spawns"]
+position = Vector2(420, 137)
+
+[node name="Marker2D3" type="Marker2D" parent="Button_Spawns"]
+position = Vector2(830, 133)
