@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b0awxvbuk8fd2"]
+
+[node name="Level1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 655.0
+color = Color(0.941176, 0.807843, 0.423529, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "THIS IS LEVEL 1"
