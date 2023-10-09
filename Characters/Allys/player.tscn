@@ -1,12 +1,77 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1prr7ou4xtkj"]
+[gd_scene load_steps=10 format=3 uid="uid://b1prr7ou4xtkj"]
 
 [ext_resource type="PackedScene" uid="uid://dtmv7okg667qj" path="res://Characters/character.tscn" id="1_bm4se"]
 [ext_resource type="Script" path="res://Characters/Allys/player.gd" id="2_3pedj"]
-[ext_resource type="Texture2D" uid="uid://bi88nb2qn4br6" path="res://icon.svg" id="3_r2qpp"]
+[ext_resource type="Texture2D" uid="uid://dmarg58ji53rr" path="res://icon.svg" id="3_r2qpp"]
 [ext_resource type="Texture2D" uid="uid://cdeypafvabrbf" path="res://Diplomacy/Assets/weapon_sword_1.png" id="4_ykng3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efo44"]
 size = Vector2(129, 129)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wy0w2"]
+radius = 28.2843
+height = 152.735
+
+[sub_resource type="Animation" id="Animation_wqyri"]
+resource_name = "attack"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.5708, 2.0944, -1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ix23a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gogho"]
+_data = {
+"RESET": SubResource("Animation_ix23a"),
+"attack": SubResource("Animation_wqyri")
+}
 
 [node name="Player" instance=ExtResource("1_bm4se")]
 scale = Vector2(0.5, 0.5)
@@ -24,11 +89,28 @@ texture = ExtResource("3_r2qpp")
 [node name="Sword" type="Node2D" parent="." index="4"]
 
 [node name="Node2D" type="Node2D" parent="Sword" index="0"]
-position = Vector2(-78, -88)
 rotation = -1.5708
 
 [node name="Sprite2D" type="Sprite2D" parent="Sword/Node2D" index="0"]
 texture_filter = 1
-position = Vector2(-38, 36)
+position = Vector2(46, -40)
 scale = Vector2(10, 10)
 texture = ExtResource("4_ykng3")
+
+[node name="HitBox" type="Area2D" parent="Sword/Node2D" index="1"]
+position = Vector2(54.0002, -47.9998)
+rotation = 0.785402
+collision_layer = 4
+collision_mask = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/Node2D/HitBox" index="0"]
+shape = SubResource("CapsuleShape2D_wy0w2")
+disabled = true
+
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="Sword" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_gogho")
+}
+
+[connection signal="body_entered" from="Sword/Node2D/HitBox" to="." method="_on_hit_box_body_entered"]
