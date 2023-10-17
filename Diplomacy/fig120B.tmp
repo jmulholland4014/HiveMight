@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4rycfr1x3rhp"]
+[gd_scene load_steps=6 format=3 uid="uid://b4rycfr1x3rhp"]
 
 [ext_resource type="Texture2D" uid="uid://nimcst8n6r2m" path="res://Diplomacy/Assets/TX Tileset Grass.png" id="1_bxo1b"]
-[ext_resource type="Script" path="res://Diplomacy/fight_scene.gd" id="1_v4fa0"]
 [ext_resource type="PackedScene" uid="uid://b1prr7ou4xtkj" path="res://Characters/Allys/player.tscn" id="2_hi367"]
 [ext_resource type="Script" path="res://Diplomacy/EnemyHolder.gd" id="3_jove2"]
-[ext_resource type="Script" path="res://Diplomacy/NewBeeAquired.gd" id="4_okwr3"]
-[ext_resource type="Script" path="res://Diplomacy/Consolation_Bee.gd" id="5_1v3uo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0pix"]
 texture = ExtResource("1_bxo1b")
@@ -841,8 +838,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_e0pix")
 
 [node name="FightScene" type="Node2D"]
-script = ExtResource("1_v4fa0")
-metadata/_edit_horizontal_guides_ = [-268.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_o30ge")
@@ -857,59 +852,10 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("2_hi367")]
-position = Vector2(-284, 269)
+position = Vector2(234, 484)
 
 [node name="EnemyHolder" type="Node2D" parent="."]
 script = ExtResource("3_jove2")
 
 [node name="SpawnPos" type="Marker2D" parent="."]
 position = Vector2(444, 294)
-
-[node name="NewBeeAquired" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("4_okwr3")
-
-[node name="SpawnPos" type="Marker2D" parent="NewBeeAquired"]
-position = Vector2(574, 285)
-
-[node name="To_TD" type="Button" parent="NewBeeAquired"]
-offset_right = 1157.0
-offset_bottom = 650.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="NewBeeAquired"]
-offset_left = 1.0
-offset_top = 35.0
-offset_right = 1155.0
-offset_bottom = 68.0
-bbcode_enabled = true
-text = "[center] New Bee Aquired"
-
-[node name="Sprite2D" type="Sprite2D" parent="NewBeeAquired"]
-position = Vector2(574, 288)
-
-[node name="Consolation_Bee" type="CanvasLayer" parent="."]
-visible = false
-script = ExtResource("5_1v3uo")
-
-[node name="SpawnPos" type="Marker2D" parent="Consolation_Bee"]
-position = Vector2(574, 285)
-
-[node name="To_TD" type="Button" parent="Consolation_Bee"]
-offset_right = 1157.0
-offset_bottom = 650.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Consolation_Bee"]
-offset_left = 1.0
-offset_top = 35.0
-offset_right = 1155.0
-offset_bottom = 90.0
-bbcode_enabled = true
-text = "[center] You Lost, heres a consolation Bee.
-New Bee Aquired"
-
-[node name="Sprite2D" type="Sprite2D" parent="Consolation_Bee"]
-position = Vector2(574, 288)
-
-[connection signal="died" from="Player" to="." method="_on_player_died"]
-[connection signal="pressed" from="NewBeeAquired/To_TD" to="NewBeeAquired" method="_on_to_td_pressed"]
-[connection signal="pressed" from="Consolation_Bee/To_TD" to="Consolation_Bee" method="_on_to_td_pressed"]
