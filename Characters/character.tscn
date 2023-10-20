@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtmv7okg667qj"]
+[gd_scene load_steps=6 format=3 uid="uid://dtmv7okg667qj"]
 
 [ext_resource type="Script" path="res://Characters/Character.gd" id="1_7p5xb"]
+
+[sub_resource type="Animation" id="Animation_hwucc"]
+resource_name = "Hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_kygg8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bfr7"]
+_data = {
+"Hurt": SubResource("Animation_hwucc"),
+"RESET": SubResource("Animation_kygg8")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m7d1"]
+bg_color = Color(0.678431, 0, 0.176471, 1)
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_7p5xb")
@@ -10,3 +50,17 @@ script = ExtResource("1_7p5xb")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1bfr7")
+}
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -103.0
+offset_top = -79.0
+offset_right = 105.0
+offset_bottom = -59.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_6m7d1")
+value = 100.0
+show_percentage = false
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
