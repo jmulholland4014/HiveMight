@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ba3nb3sq21j"]
+
+[ext_resource type="PackedScene" uid="uid://cw7ixv3nnmsda" path="res://Characters/Enemies/enemy_1.tscn" id="1_8qpca"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xhajc"]
+vertices = PackedVector2Array(1240, 389, 1228, 446, 1156, 428, 1093, 374, 1162, 299, 1237, 329, 44, 479, -22, 461, -1, 371, 80, 374, 158, 425, 122, 530, 242, 482, 314, 614, 221, 599, 344, 521, 463, 602, 547, 578, 457, 518, 586, 515, 592, 443, 466, 431, 589, 359, 559, 299, 440, 329, 505, 249, 496, 180, 380, 264, 374, 150, 469, 66, 580, 150, 616, 42, 700, 144, 790, 51, 850, 162, 931, 75, 931, 216, 1021, 132, 1093, 240, 1018, 302)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10), PackedInt32Array(11, 6, 10, 12), PackedInt32Array(13, 14, 11, 12, 15, 16), PackedInt32Array(17, 16, 15, 18, 19), PackedInt32Array(20, 19, 18, 21, 22), PackedInt32Array(23, 22, 21, 24, 25), PackedInt32Array(26, 25, 24, 27, 28, 29), PackedInt32Array(30, 26, 29, 31), PackedInt32Array(32, 30, 31, 33), PackedInt32Array(34, 32, 33, 35), PackedInt32Array(36, 34, 35, 37, 38), PackedInt32Array(3, 39, 36, 38, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1, 371, 80, 374, 158, 425, 242, 482, 344, 521, 457, 518, 466, 431, 440, 329, 380, 264, 374, 150, 469, 66, 616, 42, 790, 51, 931, 75, 1021, 132, 1093, 240, 1162, 299, 1237, 329, 1240, 389, 1228, 446, 1156, 428, 1093, 374, 1018, 302, 931, 216, 850, 162, 700, 144, 580, 150, 496, 180, 505, 249, 559, 299, 589, 359, 592, 443, 586, 515, 547, 578, 463, 602, 314, 614, 221, 599, 122, 530, 44, 479, -22, 461)])
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Enemy_1" parent="." node_paths=PackedStringArray("movement_target") instance=ExtResource("1_8qpca")]
+position = Vector2(32, 418)
+scale = Vector2(0.5, 0.5)
+movement_target = NodePath("../NavTarget")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_xhajc")
+
+[node name="NavTarget" type="Marker2D" parent="."]
+position = Vector2(1102, 320)
