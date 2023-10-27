@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7hjcan7x7jyv"]
+
+[ext_resource type="PackedScene" uid="uid://6m3g87kpnh1b" path="res://Diplomacy/Assets/diplomacy_character.tscn" id="1_rydib"]
+[ext_resource type="Texture2D" uid="uid://dqcq5fyqamnip" path="res://Diplomacy/Assets/Screenshot 2023-10-04 133927.png" id="2_770hl"]
+
+[node name="Bee_1" instance=ExtResource("1_rydib")]
+texture_normal = ExtResource("2_770hl")

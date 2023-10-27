@@ -1,0 +1,10 @@
+~ start
+Bee 3: Pleasure to meet you, I'm Bee 3. I am not much of a fighter.
+- Doesn't Matter.
+	Bee 3: Oh great heavens!
+	if DiplomacyGlobal.start_fight("bee_3"):
+		=> END
+- No worries, have a great day.
+	Bee 3: Great talking to you!
+	=> END
+=> END

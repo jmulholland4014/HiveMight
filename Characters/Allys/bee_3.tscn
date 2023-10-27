@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d22lis5s2id6c"]
+
+[ext_resource type="PackedScene" uid="uid://bgv8q0bkk07cn" path="res://Characters/Allys/ally.tscn" id="1_4cp1n"]
+[ext_resource type="Texture2D" uid="uid://dqcq5fyqamnip" path="res://Diplomacy/Assets/Screenshot 2023-10-04 133927.png" id="2_slcx2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wphv6"]
+size = Vector2(177, 170)
+
+[node name="bee_1" instance=ExtResource("1_4cp1n")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-7.5, 17)
+shape = SubResource("RectangleShape2D_wphv6")
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0.160784, 0, 0.847059, 1)
+position = Vector2(-6, 17)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_slcx2")
+
+[node name="HealthBar" parent="." index="3"]
+offset_left = -195.0
+offset_top = -102.0
+offset_right = 201.0
+offset_bottom = -75.0

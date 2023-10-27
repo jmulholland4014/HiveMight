@@ -1,0 +1,10 @@
+~ start
+Bee 1: I am Bee 1, Fight me if you dare.
+- You're On.
+	Bee 1: Time to put your money where your mouth is!
+	if DiplomacyGlobal.start_fight("bee_1"):
+		=> END
+- Nope.
+	Bee 1: Loser
+	=> END
+=> END

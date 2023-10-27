@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://6m3g87kpnh1b"]
+
+[ext_resource type="Script" path="res://Diplomacy/Assets/diplomacy_character.gd" id="1_w0vag"]
+
+[node name="Diplomacy_Character" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_w0vag")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
