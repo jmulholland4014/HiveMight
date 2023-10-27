@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw7ixv3nnmsda"]
+[gd_scene load_steps=4 format=3 uid="uid://c5m13bg6ngyuf"]
 
 [ext_resource type="PackedScene" uid="uid://bd0lcibwtb34h" path="res://Characters/Enemies/enemy.tscn" id="1_a0nkq"]
 [ext_resource type="Texture2D" uid="uid://bi88nb2qn4br6" path="res://icon.svg" id="1_v6yn6"]
@@ -6,8 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ole2"]
 radius = 37.054
 
-[node name="Enemy_1" node_paths=PackedStringArray("navigation_agent") instance=ExtResource("1_a0nkq")]
-navigation_agent = NodePath("NavigationAgent2D")
+[node name="Enemy_1" instance=ExtResource("1_a0nkq")]
+speed = 300
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_4ole2")
@@ -16,5 +16,3 @@ shape = SubResource("CircleShape2D_4ole2")
 position = Vector2(2, 5)
 scale = Vector2(0.789063, 0.796875)
 texture = ExtResource("1_v6yn6")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]

@@ -1,8 +1,8 @@
 extends HiveMightCharacter
-var speed = 300
-@export var movement_target: Node2D
+@export var speed = 300
+@onready var movement_target: Node2D = get_parent().get_parent().get_node("NavTarget")
 
-@export var navigation_agent: NavigationAgent2D
+@onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
 func _ready():
 	navigation_agent.path_desired_distance = 4.0;
 	navigation_agent.target_desired_distance = 4.0;
