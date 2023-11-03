@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DiplomacyGlobal="*res://Diplomacy/DiplomacyGlobal.gd"
+TDGlobalData="*res://TowerDefense/TDGlobalData.gd"
 
 [editor_plugins]
 

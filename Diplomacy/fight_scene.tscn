@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://nimcst8n6r2m" path="res://Diplomacy/Assets/TX Tileset Grass.png" id="1_bxo1b"]
 [ext_resource type="Script" path="res://Diplomacy/fight_scene.gd" id="1_v4fa0"]
-[ext_resource type="PackedScene" path="res://Characters/Allys/player.tscn" id="2_hi367"]
+[ext_resource type="PackedScene" uid="uid://b1prr7ou4xtkj" path="res://Characters/Allys/player.tscn" id="2_hi367"]
 [ext_resource type="Script" path="res://Diplomacy/EnemyHolder.gd" id="3_jove2"]
 [ext_resource type="Script" path="res://Diplomacy/NewBeeAquired.gd" id="4_okwr3"]
 [ext_resource type="Script" path="res://Diplomacy/Consolation_Bee.gd" id="5_1v3uo"]
