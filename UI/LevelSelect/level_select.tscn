@@ -7,47 +7,112 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 648.0
+offset_right = 1152.0
+offset_bottom = 640.0
 color = Color(0.901961, 0.729412, 0, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 833.0
-offset_top = 10.0
-offset_right = 1142.0
-offset_bottom = 63.0
+offset_left = 832.0
+offset_right = 1144.0
+offset_bottom = 61.0
 theme_override_font_sizes/font_size = 36
 text = "Select A level"
 
-[node name="LevelButton" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 171.0
-offset_top = 166.0
-offset_right = 376.0
-offset_bottom = 310.0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 384.0
+offset_bottom = 414.0
+
+[node name="LevelButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 toggle_mode = true
 button_pressed = true
 action_mode = 0
 text = "Level 1"
+vertical_icon_alignment = 0
 script = ExtResource("1_5fshh")
 level_path = "res://UI/Levels/level_1.tscn"
 
-[connection signal="pressed" from="LevelButton" to="LevelButton" method="_on_pressed"]
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/LevelButton"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = -2.0
+offset_right = 929.0
+offset_bottom = 296.0
+
+[node name="LevelButton2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+text = "Level 2"
+vertical_icon_alignment = 0
+script = ExtResource("1_5fshh")
+level_path = "res://UI/Levels/level_1.tscn"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/LevelButton2"]
+layout_mode = 0
+offset_left = -171.0
+offset_top = 110.0
+offset_right = -131.0
+offset_bottom = 150.0
+
+[node name="LevelButton3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+text = "Level 3"
+vertical_icon_alignment = 0
+script = ExtResource("1_5fshh")
+level_path = "res://UI/Levels/level_1.tscn"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/LevelButton3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelButton4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+text = "Level 4"
+vertical_icon_alignment = 0
+script = ExtResource("1_5fshh")
+level_path = "res://UI/Levels/level_1.tscn"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/LevelButton4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelButton5" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+text = "Level 5"
+vertical_icon_alignment = 0
+script = ExtResource("1_5fshh")
+level_path = "res://UI/Levels/level_1.tscn"
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/LevelButton5"]
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 60.0
+
+[connection signal="pressed" from="VBoxContainer/LevelButton" to="VBoxContainer/LevelButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelButton2" to="VBoxContainer/LevelButton2" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelButton3" to="VBoxContainer/LevelButton3" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelButton4" to="VBoxContainer/LevelButton4" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelButton5" to="VBoxContainer/LevelButton5" method="_on_pressed"]
