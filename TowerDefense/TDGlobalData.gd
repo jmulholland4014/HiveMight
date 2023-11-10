@@ -15,4 +15,3 @@ func add_level():
 	if len(active_levels) < 4:
 		var level = levels[randi() % len(levels)]
 		active_levels.append(level)
-		print(active_levels)

@@ -17,5 +17,5 @@ func _process(delta):
 
 
 func _on_to_td_pressed():
-	DiplomacyGlobal.add_fighting_bee(random_bee_string)
+	get_parent().change_to_TD(random_bee_string)
 	pass # Replace with function body.

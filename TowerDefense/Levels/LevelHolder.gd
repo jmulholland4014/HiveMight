@@ -3,14 +3,13 @@ extends Node2D
 @onready var cam_buttons = get_node("SwitchCameraBtns")
 @onready var cameras = get_node("Cameras")
 @onready var UI = get_node("UI")
-func on_new_day():
-	levels.add_level()
+@onready var spawn_timer = get_node("SpawnTimer")
+var wave = 0
+var enemies_remaining = 0
+var enemies = ["res://Characters/Enemies/enemy_1.tscn"]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	on_new_day()
-	on_new_day()
-	on_new_day()
-	on_new_day()
+	begin_wave()
 	for button in cam_buttons.get_children():
 		button.activate_camera.connect(activate_cameras)
 	pass # Replace with function body.
@@ -36,11 +35,24 @@ func activate_cameras(cam_name):
 		else:
 			camera.enabled = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
+func begin_wave():
+	wave +=1
+	enemies_remaining = wave*10
+	spawn_timer.start()
+		
+func spawn_enemy():
+	var enemy = load(enemies[randi() % len(enemies)]).instantiate()
+	var level = levels.get_children()[randi() % len(levels.get_children())]
+	level.add_enemy(enemy)
+	enemies_remaining -= 1
+	if enemies_remaining <= 0:
+		spawn_timer.stop()
+	
 func _on_back_button_pressed():
 	activate_cameras("0")
+	pass # Replace with function body.
+
+
+func _on_spawn_timer_timeout():
+	spawn_enemy()
 	pass # Replace with function body.
