@@ -1,11 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt1tk240jxjed"]
+[gd_scene load_steps=8 format=3 uid="uid://dt1tk240jxjed"]
 
 [ext_resource type="Script" path="res://TowerDefense/Levels/HeartContainer.gd" id="1_371o4"]
-[ext_resource type="Script" path="res://TowerDefense/Levels/LevelHolder.gd" id="1_il3si"]
 [ext_resource type="Script" path="res://TowerDefense/Levels/LHLevels.gd" id="1_x53t5"]
-[ext_resource type="Script" path="res://TowerDefense/Levels/SwitchCameraBtns.gd" id="2_hkdg6"]
 [ext_resource type="Texture2D" uid="uid://clso231kor0o6" path="res://TowerDefense/Assets/heart pixel art 64x64.png" id="2_k0t5v"]
-[ext_resource type="Script" path="res://TowerDefense/Levels/CameraButton.gd" id="3_lgvem"]
 [ext_resource type="Texture2D" uid="uid://cal8skvwy4p2t" path="res://TowerDefense/Assets/Tilesheet/towerDefense_tilesheet.png" id="3_rhfc3"]
 [ext_resource type="Texture2D" uid="uid://dy0xwwgp7546o" path="res://TowerDefense/beehive_789407.png" id="4_4k6m0"]
 
@@ -4372,62 +4369,12 @@ texture = ExtResource("3_rhfc3")
 sources/0 = SubResource("TileSetAtlasSource_lne7p")
 
 [node name="LevelHolder" type="Node2D"]
-script = ExtResource("1_il3si")
-
-[node name="SwitchCameraBtns" type="Node2D" parent="."]
-script = ExtResource("2_hkdg6")
-
-[node name="1" type="Button" parent="SwitchCameraBtns"]
-z_index = 1
-offset_right = 1165.0
-offset_bottom = 655.0
-script = ExtResource("3_lgvem")
-
-[node name="2" type="Button" parent="SwitchCameraBtns"]
-z_index = 1
-offset_left = 2744.0
-offset_top = 8.0
-offset_right = 3909.0
-offset_bottom = 663.0
-script = ExtResource("3_lgvem")
-
-[node name="3" type="Button" parent="SwitchCameraBtns"]
-z_index = 1
-offset_left = 8.0
-offset_top = 1736.0
-offset_right = 1173.0
-offset_bottom = 2391.0
-script = ExtResource("3_lgvem")
-
-[node name="4" type="Button" parent="SwitchCameraBtns"]
-z_index = 1
-offset_left = 2704.0
-offset_top = 1752.0
-offset_right = 3869.0
-offset_bottom = 2407.0
-script = ExtResource("3_lgvem")
 
 [node name="Cameras" type="Node2D" parent="."]
 
-[node name="0" type="Camera2D" parent="Cameras"]
+[node name="Camera2D" type="Camera2D" parent="Cameras"]
 position = Vector2(1671, 1281)
 zoom = Vector2(0.25, 0.25)
-
-[node name="1" type="Camera2D" parent="Cameras"]
-position = Vector2(616, 344)
-enabled = false
-
-[node name="2" type="Camera2D" parent="Cameras"]
-position = Vector2(3312, 336)
-enabled = false
-
-[node name="3" type="Camera2D" parent="Cameras"]
-position = Vector2(640, 2072)
-enabled = false
-
-[node name="4" type="Camera2D" parent="Cameras"]
-position = Vector2(3320, 2096)
-enabled = false
 
 [node name="LevelSpawns" type="Node2D" parent="."]
 
@@ -4463,13 +4410,6 @@ texture_filter = 1
 position = Vector2(950, 39)
 texture = ExtResource("2_k0t5v")
 
-[node name="BackButton" type="Button" parent="UI"]
-visible = false
-offset_right = 8.0
-offset_bottom = 8.0
-disabled = true
-text = "Back"
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mkdlf")
 format = 2
@@ -4481,9 +4421,3 @@ texture = ExtResource("4_4k6m0")
 
 [node name="Levels" type="Node2D" parent="."]
 script = ExtResource("1_x53t5")
-
-[connection signal="pressed" from="SwitchCameraBtns/1" to="SwitchCameraBtns/1" method="_on_pressed"]
-[connection signal="pressed" from="SwitchCameraBtns/2" to="SwitchCameraBtns/2" method="_on_pressed"]
-[connection signal="pressed" from="SwitchCameraBtns/3" to="SwitchCameraBtns/3" method="_on_pressed"]
-[connection signal="pressed" from="SwitchCameraBtns/4" to="SwitchCameraBtns/4" method="_on_pressed"]
-[connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
