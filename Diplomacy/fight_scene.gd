@@ -14,3 +14,8 @@ func _process(delta):
 func _on_player_died():
 	consolation_bee.visible = true
 	pass # Replace with function body.
+
+func change_to_TD(bee_name):
+	DiplomacyGlobal.add_fighting_bee(bee_name)
+	TDGlobalData.add_level()
+	get_tree().change_scene_to_file("res://TowerDefense/Levels/LevelHolder.tscn")

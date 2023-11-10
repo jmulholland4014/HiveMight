@@ -4374,6 +4374,9 @@ sources/0 = SubResource("TileSetAtlasSource_lne7p")
 [node name="LevelHolder" type="Node2D"]
 script = ExtResource("1_il3si")
 
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.2
+
 [node name="SwitchCameraBtns" type="Node2D" parent="."]
 script = ExtResource("2_hkdg6")
 
@@ -4482,6 +4485,7 @@ texture = ExtResource("4_4k6m0")
 [node name="Levels" type="Node2D" parent="."]
 script = ExtResource("1_x53t5")
 
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="SwitchCameraBtns/1" to="SwitchCameraBtns/1" method="_on_pressed"]
 [connection signal="pressed" from="SwitchCameraBtns/2" to="SwitchCameraBtns/2" method="_on_pressed"]
 [connection signal="pressed" from="SwitchCameraBtns/3" to="SwitchCameraBtns/3" method="_on_pressed"]

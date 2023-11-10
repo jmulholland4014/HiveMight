@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://3gf8i6nsfn54"]
+[gd_scene load_steps=7 format=3 uid="uid://3gf8i6nsfn54"]
 
 [ext_resource type="Texture2D" uid="uid://cal8skvwy4p2t" path="res://TowerDefense/Assets/Tilesheet/towerDefense_tilesheet.png" id="1_lfdb7"]
+[ext_resource type="Script" path="res://TowerDefense/Levels/Level.gd" id="1_mqi72"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6wo3"]
 texture = ExtResource("1_lfdb7")
@@ -8727,6 +8728,7 @@ texture = ExtResource("1_lfdb7")
 sources/0 = SubResource("TileSetAtlasSource_aqi47")
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_mqi72")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tcoru")
@@ -8735,6 +8737,8 @@ format = 2
 [node name="TowerExclusion" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jmmwt")
 format = 2
+
+[node name="EnemySpawnPos" type="Marker2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
 
