@@ -12,3 +12,7 @@ func _process(delta):
 		if i >= TDGlobalData.hearts:
 			get_children()[i].queue_free()
 			
+
+
+func _on_pause_play_pressed():
+	pass # Replace with function body.

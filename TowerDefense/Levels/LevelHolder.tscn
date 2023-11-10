@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt1tk240jxjed"]
+[gd_scene load_steps=12 format=3 uid="uid://dt1tk240jxjed"]
 
 [ext_resource type="Script" path="res://TowerDefense/Levels/HeartContainer.gd" id="1_371o4"]
 [ext_resource type="Script" path="res://TowerDefense/Levels/LevelHolder.gd" id="1_il3si"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://TowerDefense/Levels/CameraButton.gd" id="3_lgvem"]
 [ext_resource type="Texture2D" uid="uid://cal8skvwy4p2t" path="res://TowerDefense/Assets/Tilesheet/towerDefense_tilesheet.png" id="3_rhfc3"]
 [ext_resource type="Texture2D" uid="uid://dy0xwwgp7546o" path="res://TowerDefense/beehive_789407.png" id="4_4k6m0"]
+[ext_resource type="Texture2D" uid="uid://cqjmgkparrwia" path="res://Diplomacy/Assets/icons8-play-pause-24.png" id="6_0sjbp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lne7p"]
 texture = ExtResource("3_rhfc3")
@@ -4470,6 +4471,20 @@ offset_bottom = 8.0
 disabled = true
 text = "Back"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+offset_left = 1102.0
+offset_top = 92.0
+offset_right = 1142.0
+offset_bottom = 132.0
+
+[node name="PausePlay" type="TextureButton" parent="UI/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("6_0sjbp")
+texture_pressed = ExtResource("6_0sjbp")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mkdlf")
 format = 2
@@ -4487,3 +4502,4 @@ script = ExtResource("1_x53t5")
 [connection signal="pressed" from="SwitchCameraBtns/3" to="SwitchCameraBtns/3" method="_on_pressed"]
 [connection signal="pressed" from="SwitchCameraBtns/4" to="SwitchCameraBtns/4" method="_on_pressed"]
 [connection signal="pressed" from="UI/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/PausePlay" to="." method="_on_pause_play_pressed"]
