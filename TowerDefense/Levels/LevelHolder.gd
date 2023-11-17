@@ -44,3 +44,13 @@ func _process(delta):
 func _on_back_button_pressed():
 	activate_cameras("0")
 	pass # Replace with function body.
+
+
+func _on_pause_play_pressed():
+	if get_tree().is_paused():
+		get_tree().paused=false
+		print("not paused") 
+	else:
+		get_tree().paused = true
+		print("paused")
+	pass # Replace with function body.
